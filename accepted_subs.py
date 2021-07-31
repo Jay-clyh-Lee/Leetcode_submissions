@@ -53,6 +53,7 @@ def twoSum(self, numbers: List[int], target: int) -> List[int]:
         r -= 1
         
 # alternative using dictionary
+# runtime: 48 ms
 def twoSum2(numbers, target):
     d = {}
     for i, num in enumerate(numbers):
