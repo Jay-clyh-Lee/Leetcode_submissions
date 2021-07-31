@@ -45,13 +45,20 @@ def twoSum(self, numbers: List[int], target: int) -> List[int]:
     s = numbers[l] + numbers[r]
     if numbers[l] + numbers[r] == target:
         return [l+1, r+1]
-
-    # take advantage of the fact that numbers is an ordered list
-
     # if s is smaller, next number in the list will make s bigger
     elif s < target:
         l += 1
-
     # if l is bigger, previous number in the list will make s smaller 
     else:
         r -= 1
+        
+# alternative using dictionary
+def twoSum2(numbers, target):
+    d = {}
+    for i, num in enumerate(numbers):
+        
+        # if the difference between target and a num is in the list numbers, then the difference + num is the target (duh...)
+        if target-num in d:
+            print(target, num, target-num)
+            return [d[target-num]+1, i+1]
+        d[num] = i
