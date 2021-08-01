@@ -63,3 +63,18 @@ def twoSum2(numbers, target):
             print(target, num, target-num)
             return [d[target-num]+1, i+1]
         d[num] = i
+        
+
+#-------
+
+# https://leetcode.com/problems/three-divisors/
+# runtime: 40ms
+# memory: 100% faster than other submissions
+class Solution:
+    def isThree(self, n: int) -> bool:
+        return len([x for x in range(1, n+1) if n % x == 0]) == 3
+      
+      
+#-------
+
+#
