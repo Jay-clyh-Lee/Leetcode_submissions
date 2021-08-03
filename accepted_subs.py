@@ -120,7 +120,11 @@ class Solution:
       
 #-------
 
-# 
-# runtime: 
-# memory: 
+# https://leetcode.com/problems/truncate-sentence/
+# runtime: 32 ms
+# memory: 14.4 MB
+class Solution:
+    def truncateSentence(self, s: str, k: int) -> str:
+        return ' '.join(s.split()[:k])
+    
 
