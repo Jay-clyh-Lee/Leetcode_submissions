@@ -152,7 +152,26 @@ class Solution:
         #print(l)    
         return len(set(l))
     
+# clean up:
+# runtime: 48ms
+# memory: 14.4 MB
+class Solution:
+    def numUniqueEmails(self, emails: List[str]) -> int:
 
+        l = set()
+        for email in emails:
+            local, domain = email.split('@') 
+            local = local.split('+')[0].replace('.', '')
+            l.add(local + '@' + domain)
+            
+        return len(l)
+
+# one-liner:
+# runtime: 52ms
+# memory: 14.5 MB
+class Solution:
+    def numUniqueEmails(self, emails: List[str]) -> int:
+        return len(set([email.split('@')[0].split('+')[0].replace('.', '') + '@' + email.split('@')[1] for email in emails]))
 
 
 #-------
