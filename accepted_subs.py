@@ -127,4 +127,238 @@ class Solution:
     def truncateSentence(self, s: str, k: int) -> str:
         return ' '.join(s.split()[:k])
     
+    
+#-------
+#https://leetcode.com/problems/unique-email-addresses/submissions/
+# runtime: 52ms
+# memory: 14.5 MB
+class Solution:
+    def numUniqueEmails(self, emails: List[str]) -> int:
+
+        l = []
+
+        for email in emails:
+            #print(email)
+            index = email.find('@')
+            local = email[:index].replace('.', '')
+            domain = email[index:]
+            #print('local is:', local, 'AND domain is:', domain)
+
+            if '+' in local:
+                l.append(local[:local.find('+')] + domain)
+            else:
+                l.append(local + domain)
+
+        #print(l)    
+        return len(set(l))
+    
+
+
+
+#-------
+
+# https:
+# runtime:
+# memory:
+
+
+#-------
+
+# https:
+# runtime:
+# memory:
+
+
+#-------
+
+# https:
+# runtime:
+# memory:
+
+
+#-------
+
+# https:
+# runtime:
+# memory:
+
+
+#-------
+
+# https:
+# runtime:
+# memory:
+
+#-------
+
+# https:
+# runtime:
+# memory:
+
+
+#-------
+
+# https:
+# runtime:
+# memory:
+
+
+#-------
+
+# https:
+# runtime:
+# memory:
+
+
+#-------
+
+# https:
+# runtime:
+# memory:
+
+
+#-------
+
+# https:
+# runtime:
+# memory:
+
+
+#-------
+
+# https:
+# runtime:
+# memory:
+
+
+#-------
+
+# https:
+# runtime:
+# memory:
+
+
+#-------
+
+# https:
+# runtime:
+# memory:
+
+
+#-------
+
+# https:
+# runtime:
+# memory:
+
+
+#-------
+
+# https:
+# runtime:
+# memory:
+
+#-------
+
+# https:
+# runtime:
+# memory:
+
+
+#-------
+
+# https:
+# runtime:
+# memory:
+
+
+#-------
+
+# https:
+# runtime:
+# memory:
+
+
+#-------
+
+# https:
+# runtime:
+# memory:
+
+
+#-------
+
+# https:
+# runtime:
+# memory:
+
+
+
+#-------
+
+# https:
+# runtime:
+# memory:
+
+
+#-------
+
+# https:
+# runtime:
+# memory:
+
+
+#-------
+
+# https:
+# runtime:
+# memory:
+
+
+#-------
+
+# https:
+# runtime:
+# memory:
+
+
+#-------
+
+# https:
+# runtime:
+# memory:
+
+#-------
+
+# https:
+# runtime:
+# memory:
+
+
+#-------
+
+# https:
+# runtime:
+# memory:
+
+
+#-------
+
+# https:
+# runtime:
+# memory:
+
+
+#-------
+
+# https:
+# runtime:
+# memory:
+
+
+#-------
+
+# https:
+# runtime:
+# memory:
 
