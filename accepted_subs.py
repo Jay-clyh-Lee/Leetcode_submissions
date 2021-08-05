@@ -176,9 +176,24 @@ class Solution:
 
 #-------
 
-# https:
-# runtime:
-# memory:
+# https: https://leetcode.com/problems/subsets-ii/
+
+# use Python library
+# from itertools import combinations 
+# leetcode includes it
+
+# runtime: 36ms
+# memory: 14.6 MB
+class Solution:
+    def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
+
+        l = []
+        for i in range(len(nums)+1):
+            for combo in combinations(nums,i):
+                combo = sorted(list(combo))
+                if combo not in l:
+                    l.append(combo)
+        return l
 
 
 #-------
