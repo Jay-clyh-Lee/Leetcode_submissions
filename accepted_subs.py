@@ -198,11 +198,24 @@ class Solution:
 
 #-------
 
-# https:
-# runtime:
-# memory:
+# https: leetcode.com/problems/number-of-different-integers-in-a-string/
+# runtime: 20 ms faster than 99.64%
+# memory: 14.3 MB
 
+class Solution:
+    def numDifferentIntegers(self, word: str) -> int:
 
+        string = ''
+        
+        for ele in word:
+            if ele.isdigit():
+                string += ele
+            else:
+                string += ' '
+                
+        return len(set([int(x) for x in string.split()]))
+        
+        
 #-------
 
 # https:
