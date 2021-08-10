@@ -248,11 +248,21 @@ class Solution(object):
         return res
     
     
-# https:
-# runtime:
-# memory:
+# https://leetcode.com/problems/maximum-number-of-words-you-can-type/
+# runtime: 32ms
+# memory: 14.4 MB
 
+class Solution:
+    def canBeTypedWords(self, text: str, brokenLetters: str) -> int:
 
+        letters = set(brokenLetters)
+        count = 0
+        for word in text.split():
+            if all(x not in letters for x in word):
+                count += 1
+        return count
+
+    
 #-------
 
 # https:
