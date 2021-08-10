@@ -226,7 +226,28 @@ class Solution:
 
 
 #-------
+# https://leetcode.com/problems/longest-substring-without-repeating-characters/
+# runtime: 48ms
+# memory: 13.4 MB
 
+class Solution(object):
+    def lengthOfLongestSubstring(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        record = {} 
+        res = 0
+        start = 0
+        for i in range(len(s)):
+            if s[i] in record:
+                start = max(start, record[s[i]] + 1) # key: s[i], val: record[s[i]]
+            record[s[i]] = i
+            # print(record)
+            res = max(res, i - start + 1)
+        return res
+    
+    
 # https:
 # runtime:
 # memory:
