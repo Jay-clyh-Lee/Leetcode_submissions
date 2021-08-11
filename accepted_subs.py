@@ -265,9 +265,25 @@ class Solution:
     
 #-------
 
-# https:
-# runtime:
-# memory:
+# https://leetcode.com/problems/sum-of-digits-of-string-after-convert/
+# runtime: 32ms
+# memory: 14.1 MB
+
+class Solution:
+    def getLucky(self, s: str, k: int) -> int:
+
+        string = ''
+        for letter in s:
+            string += str(ord(letter)-96)
+
+        while k > 0:
+            string = str(sum([int(x) for x in string]))
+            k -= 1
+
+        return string
+    
+
+
 
 
 #-------
