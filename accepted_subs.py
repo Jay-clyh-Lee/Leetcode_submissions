@@ -295,7 +295,7 @@ class Solution:
 
 #-------
 
-# https:
+# https://leetcode.com/problems/minimum-distance-to-the-target-element/
 # runtime: 56ms
 # memory: 14.2 MB
 
@@ -308,6 +308,14 @@ class Solution:
             l -= 1
             r += 1
 
+# alternative one-liner
+# runtime: 103ms
+# memory: 14.6 MB
+class Solution:
+    def getMinDistance(self, nums: List[int], target: int, start: int) -> int:
+        return min(abs(i - start) for i in range(len(nums)) if nums[i] == target)
+            
+        
 #-------
 
 # https:
