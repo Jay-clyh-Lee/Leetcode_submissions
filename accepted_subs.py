@@ -298,7 +298,6 @@ class Solution:
 # https://leetcode.com/problems/minimum-distance-to-the-target-element/
 # runtime: 56ms
 # memory: 14.2 MB
-
 class Solution:
     def getMinDistance(self, nums: List[int], target: int, start: int) -> int:
         l = r = start
@@ -318,9 +317,39 @@ class Solution:
         
 #-------
 
-# https:
-# runtime:
-# memory:
+# https://leetcode.com/problems/replace-all-digits-with-characters/
+# runtime: 28ms
+# memory: 14.2 MB
+class Solution:
+    def replaceDigits(self, s: str) -> str:
+              
+        string = ''
+        for i in range(len(s)):
+            if s[i].isalpha():
+                string += s[i]
+            else:
+                string += chr( ord(s[i-1]) + int(s[i]) )
+                
+        return string
+
+#alternative one-liner
+# runtime: 56ms
+# memory 14.1 MB
+class Solution:
+    def replaceDigits(self, s: str) -> str:
+        return ''.join([chr(ord(s[i-1]) + int(s[i])) if i % 2 != 0 else s[i] for i in range(len(s))])
+
+#alternative using list
+# runtime: 32ms
+# memory: 14.3 MB
+class Solution:
+    def replaceDigits(self, s: str) -> str:
+        
+        l = list(s)
+        for i in range(1, len(l), 2):
+            l[i] = chr(ord(l[i - 1]) + int(l[i]))
+        
+        return ''.join(l)
 
 
 #-------
