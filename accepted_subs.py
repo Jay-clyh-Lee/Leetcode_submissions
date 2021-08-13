@@ -354,9 +354,36 @@ class Solution:
 
 #-------
 
-# https:
-# runtime:
-# memory:
+# https://leetcode.com/problems/height-checker/
+# runtime: 44ms
+# memory: 14.2 MB
+class Solution:
+    def heightChecker(self, heights: List[int]) -> int:
+        count = 0
+        l = sorted(heights)
+        for i in range(len(heights)):
+            if heights[i] != l[i]:
+                count += 1
+                
+        return count
+
+# alternative using zip()
+# runtime: 49ms
+# memory: 14.1 MB
+class Solution:
+    def heightChecker(self, heights: List[int]) -> int:
+        count = 0
+        for x, y in zip(heights, sorted(heights)):
+            count += (not x == y)
+        
+        return count
+
+# alternative one-liner
+# runtime: 63ms
+# memory: 14.4 MB
+class Solution:
+    def heightChecker(self, heights: List[int]) -> int:
+        return sum(x != y for x, y in zip(heights, sorted(heights)))
 
 
 #-------
