@@ -388,9 +388,37 @@ class Solution:
 
 #-------
 
-# https:
-# runtime:
-# memory:
+# https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+# runtime: 1100 ms
+# memory: 25.2 MB
+# credit: girikuncoro.       post: https://leetcode.com/problems/best-time-to-buy-and-sell-stock/discuss/39049/Easy-O(n)-Python-solution
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        
+        max_profit, min_price = 0, float('inf') #unbounded upper value. Can also assign min_price = max(prices)
+        
+        for price in prices:
+            min_price = min(min_price, price)
+            profit = price - min_price    
+            max_profit = max(max_profit, profit)
+            
+        return max_profit
+       
+# alternative that only works for smaller set
+# runtime: exceeds time limit
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+     
+        max_val = 0
+        n = len(prices)
+        
+        for i in range(n-1):
+            for j in range(i+1, n):
+                diff = prices[j] - prices[i]
+                if diff > max_val:
+                    max_val = diff
+                    
+        return max_val
 
 
 #-------
