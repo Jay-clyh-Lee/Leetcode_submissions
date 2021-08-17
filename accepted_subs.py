@@ -423,10 +423,15 @@ class Solution:
 
 #-------
 
-# https:
-# runtime:
-# memory:
-
+# https://leetcode.com/problems/check-if-word-equals-summation-of-two-words/
+# runtime: 24ms 
+# memory: 14.4 MB
+class Solution:
+    def isSumEqual(self, firstWord: str, secondWord: str, targetWord: str) -> bool:
+        firstNum = int(''.join(str(ord(letter)-97) for letter in firstWord))
+        secondNum = int(''.join(str(ord(letter)-97) for letter in secondWord))
+        targetNum = int(''.join(str(ord(letter)-97) for letter in targetWord))
+        return firstNum + secondNum == targetNum
 
 #-------
 
