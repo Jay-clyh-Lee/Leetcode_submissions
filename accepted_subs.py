@@ -433,13 +433,17 @@ class Solution:
         targetNum = int(''.join(str(ord(letter)-97) for letter in targetWord))
         return firstNum + secondNum == targetNum
 
+    
 #-------
 
-# https:
-# runtime:
-# memory:
+# https://leetcode.com/problems/build-array-from-permutation/
+# runtime: 174 ms   
+# memory: 14.6 MB
+class Solution:
+    def buildArray(self, nums: List[int]) -> List[int]:
+        return [nums[x] for x in nums]
 
-
+    
 #-------
 
 # https:
