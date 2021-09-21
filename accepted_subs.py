@@ -463,10 +463,21 @@ class Solution:
 
 #-------
 
-# https:
-# runtime:
-# memory:
+# https: https://leetcode.com/problems/linked-list-cycle/
+# runtime: 83 ms
+# memory: 17.6 MB
 
+class Solution:
+    def hasCycle(self, head):
+        try:
+            slow = head
+            fast = head.next
+            while slow is not fast:
+                slow = slow.next
+                fast = fast.next.next
+            return True
+        except:
+            return False
 
 #-------
 
